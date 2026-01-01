@@ -42,8 +42,8 @@ export async function generateMetadata({ params }: PageProps) {
     }
 
     return {
-        title: pageData.attributes.title,
-        description: pageData.attributes.description,
+        title: pageData.title,
+        description: pageData.description,
     };
 }
 
@@ -55,7 +55,7 @@ export default async function DynamicPage({ params }: PageProps) {
         notFound();
     }
 
-    const { title, content } = pageData.attributes;
+    const { title, content } = pageData;
 
     return (
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">

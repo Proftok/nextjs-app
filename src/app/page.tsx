@@ -36,7 +36,7 @@ export default async function Home() {
         );
     }
 
-    const { title, description, content } = pageData.attributes;
+    const { title, description, content } = pageData;
 
     return (
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">

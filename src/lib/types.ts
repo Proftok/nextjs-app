@@ -12,20 +12,19 @@ export interface StrapiResponse<T> {
 
 export interface StrapiEntity<T> {
     id: number;
-    attributes: T;
+    documentId: string;
 }
 
 export interface StrapiMedia {
     id: number;
-    attributes: {
-        name: string;
-        alternativeText: string | null;
-        caption: string | null;
-        width: number;
-        height: number;
-        formats: any;
-        url: string;
-    };
+    documentId: string;
+    name: string;
+    alternativeText: string | null;
+    caption: string | null;
+    width: number;
+    height: number;
+    formats: any;
+    url: string;
 }
 
 export interface PageAttributes {
@@ -38,4 +37,5 @@ export interface PageAttributes {
     publishedAt: string;
 }
 
-export type Page = StrapiEntity<PageAttributes>;
+// In v5, the entity *is* the attributes + id + documentId
+export type Page = StrapiEntity<PageAttributes> & PageAttributes;
