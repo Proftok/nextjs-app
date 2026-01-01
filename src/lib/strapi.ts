@@ -16,7 +16,7 @@ export async function fetchStrapiAPI(
         };
 
         const queryString = qs.stringify(urlParamsObject);
-        const requestUrl = `${process.env.STRAPI_API_URL}${path}${queryString ? `?${queryString}` : ''
+        const requestUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${path}${queryString ? `?${queryString}` : ''
             }`;
 
         const response = await fetch(requestUrl, mergedOptions);
